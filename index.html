@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to my personal website showcasing my work and interests">
+    <meta name="keywords" content="web development, design, portfolio, personal website">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="My Personal Website">
+    <meta property="og:description" content="Welcome to my personal website showcasing my work and interests">
+    <meta property="og:image" content="/assets/50ffaae6-a830-4238-b75f-524cef3129a4.png">
+    <title>VasyTech Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-container">
+        <header class="primary-header">
+            <h1 class="site-title">VasyTech Blog</h1>
+            <nav class="main-nav">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="grid-sections" class="grid-layout">
+                <div class="card reveal">
+                    <h3>Web Development</h3>
+                    <p>Explore my latest web development projects and coding adventures.</p>
+                    <a href="#" class="btn">View Projects</a>
+                </div>
+                <div class="card reveal">
+                    <h3>Design & UI/UX</h3>
+                    <p>Discover my design work and user experience projects.</p>
+                    <a href="#" class="btn">See Designs</a>
+                </div>
+                <div class="card reveal">
+                    <h3>Music & Piano</h3>
+                    <p>Check out my musical journey and piano performances.</p>
+                    <a href="#" class="btn">Listen Now</a>
+                </div>
+                <div class="card reveal">
+                    <h3>News & Updates</h3>
+                    <p>Stay updated with my latest news and announcements.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 My Personal Website. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Pinterest</a>
+                <a href="#" target="_blank">TikTok</a>
+                <a href="#" target="_blank">YouTube</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        function checkReveal() {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Check on load
+    </script>
+</body>
+</html>

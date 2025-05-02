@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VasyTech Blog - Contact Information"
+    />
+    <meta
+      name="keywords"
+      content="contact, web development, design, music, piano, blog, programming"
+    />
+    <meta name="author" content="VasyTech" />
+    <meta
+      property="og:title"
+      content="VasyTech Blog | Contact Information"
+    />
+    <meta
+      property="og:description"
+      content="Get in touch with VasyTech for web development, design, and music services!"
+    />
+    <meta
+      property="og:image"
+      content="https://vasytech.com/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://vasytech.com/about" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://vasytech.com/about" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>VasyTech Blog | Contact Information</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="site-container">
+      <header class="primary-header" role="banner">
+        <h1 class="site-title">VasyTech Blog</h1>
+
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <button
+            class="hamburger"
+            aria-label="Open Menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+
+          <ul class="nav-links" role="list">
+            <li role="listitem"><a href="index.html">Home</a></li>
+            <li role="listitem"><a href="about.html" aria-current="page">About</a></li>
+            <li role="listitem"><a href="blog.html">Blog</a></li>
+            <li role="listitem"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main role="main">
+        <section id="contact-section" class="reveal">
+          <h2>Contact Information</h2>
+          <div class="grid-layout">
+            <div class="card">
+              <h3>Get in Touch</h3>
+              <p>Feel free to reach out to me through any of the following channels:</p>
+              <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <p><strong>Location:</strong> Your City, Country</p>
+                <p><strong>Working Hours:</strong> Monday - Friday, 9:00 - 17:00</p>
+              </div>
+              <div class="social-links">
+                <a href="#" target="_blank" class="social-link">Facebook</a>
+                <a href="#" target="_blank" class="social-link">Instagram</a>
+                <a href="#" target="_blank" class="social-link">Pinterest</a>
+                <a href="#" target="_blank" class="social-link">TikTok</a>
+                <a href="#" target="_blank" class="social-link">YouTube</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <address>
+          Contact me:
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </address>
+        <div class="social-links">
+          <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">Pinterest</a>
+          <a href="#" target="_blank">TikTok</a>
+          <a href="#" target="_blank">YouTube</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const body = document.body;
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+        body.classList.toggle("menu-open");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("active");
+          body.classList.remove("menu-open");
+        }
+      });
+
+      // Scroll reveal effect
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        for (let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveals[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

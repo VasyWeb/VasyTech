@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VasyTech Blog - Latest Articles and News"
+    />
+    <meta
+      name="keywords"
+      content="blog, web development, design, music, piano, news, articles"
+    />
+    <meta name="author" content="VasyTech" />
+    <meta
+      property="og:title"
+      content="VasyTech Blog | Latest Articles and News"
+    />
+    <meta
+      property="og:description"
+      content="Explore the latest articles, news, and updates from VasyTech Blog!"
+    />
+    <meta
+      property="og:image"
+      content="https://vasytech.com/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://vasytech.com/blog" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://vasytech.com/blog" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>VasyTech Blog | Latest Articles and News</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="site-container">
+      <header class="primary-header" role="banner">
+        <h1 class="site-title">VasyTech Blog</h1>
+
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <button
+            class="hamburger"
+            aria-label="Open Menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+
+          <ul class="nav-links" role="list">
+            <li role="listitem"><a href="index.html">Home</a></li>
+            <li role="listitem"><a href="about.html">About</a></li>
+            <li role="listitem"><a href="blog.html" aria-current="page">Blog</a></li>
+            <li role="listitem"><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main role="main">
+        <section id="blog-categories" class="reveal">
+          <h2>Blog Categories</h2>
+          <div class="grid-layout">
+            <div class="card blog-card">
+              <div class="card-number">01</div>
+              <h3>Web Development</h3>
+              <p>Latest articles about web development, programming tips, and coding tutorials.</p>
+              <ul class="blog-topics">
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Frameworks</li>
+                <li>Best Practices</li>
+              </ul>
+              <a href="#" class="btn">Explore Articles</a>
+            </div>
+
+            <div class="card blog-card">
+              <div class="card-number">02</div>
+              <h3>Design & UI/UX</h3>
+              <p>Insights into design principles, user experience, and creative solutions.</p>
+              <ul class="blog-topics">
+                <li>UI Design</li>
+                <li>UX Research</li>
+                <li>Color Theory</li>
+                <li>Design Tools</li>
+              </ul>
+              <a href="#" class="btn">Explore Articles</a>
+            </div>
+
+            <div class="card blog-card">
+              <div class="card-number">03</div>
+              <h3>Music & Piano</h3>
+              <p>Articles about music theory, piano techniques, and musical inspiration.</p>
+              <ul class="blog-topics">
+                <li>Piano Tutorials</li>
+                <li>Music Theory</li>
+                <li>Practice Tips</li>
+                <li>Composition</li>
+              </ul>
+              <a href="#" class="btn">Explore Articles</a>
+            </div>
+
+            <div class="card blog-card">
+              <div class="card-number">04</div>
+              <h3>News & Updates</h3>
+              <p>Latest news, updates, and announcements from the tech and music world.</p>
+              <ul class="blog-topics">
+                <li>Tech News</li>
+                <li>Industry Updates</li>
+                <li>Event Coverage</li>
+                <li>Community News</li>
+              </ul>
+              <a href="#" class="btn">Explore Articles</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <address>
+          Contact me:
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </address>
+        <div class="social-links">
+          <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">Pinterest</a>
+          <a href="#" target="_blank">TikTok</a>
+          <a href="#" target="_blank">YouTube</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const body = document.body;
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+        body.classList.toggle("menu-open");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("active");
+          body.classList.remove("menu-open");
+        }
+      });
+
+      // Scroll reveal effect
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        for (let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveals[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

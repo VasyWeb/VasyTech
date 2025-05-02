@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="VasyTech Blog - Contact and Comments"
+    />
+    <meta
+      name="keywords"
+      content="contact, comments, web development, design, music, piano, blog"
+    />
+    <meta name="author" content="VasyTech" />
+    <meta
+      property="og:title"
+      content="VasyTech Blog | Contact and Comments"
+    />
+    <meta
+      property="og:description"
+      content="Get in touch with VasyTech and join the conversation!"
+    />
+    <meta
+      property="og:image"
+      content="https://vasytech.com/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://vasytech.com/contact" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://vasytech.com/contact" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>VasyTech Blog | Contact and Comments</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="site-container">
+      <header class="primary-header" role="banner">
+        <h1 class="site-title">VasyTech Blog</h1>
+
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <button
+            class="hamburger"
+            aria-label="Open Menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+
+          <ul class="nav-links" role="list">
+            <li role="listitem"><a href="index.html">Home</a></li>
+            <li role="listitem"><a href="about.html">About</a></li>
+            <li role="listitem"><a href="blog.html">Blog</a></li>
+            <li role="listitem"><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main role="main">
+        <section id="contact-form" class="reveal">
+          <h2>Contact Me</h2>
+          <div class="grid-layout">
+            <div class="card contact-card">
+              <h3>Send a Message</h3>
+              <form id="emailForm" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section id="comments-section" class="reveal">
+          <h2>Comments</h2>
+          <div class="grid-layout">
+            <div class="card comments-card">
+              <h3>Join the Conversation</h3>
+              <form id="commentForm" class="comment-form">
+                <div class="form-group">
+                  <label for="commentName">Name</label>
+                  <input type="text" id="commentName" name="commentName" required>
+                </div>
+                <div class="form-group">
+                  <label for="comment">Your Comment</label>
+                  <textarea id="comment" name="comment" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn">Post Comment</button>
+              </form>
+
+              <div class="comments-list">
+                <!-- Sample comments - these would be dynamically loaded in a real application -->
+                <div class="comment">
+                  <div class="comment-header">
+                    <span class="comment-author">John Doe</span>
+                    <span class="comment-date">March 15, 2024</span>
+                  </div>
+                  <p class="comment-text">Great blog! I really enjoyed your latest article about web development.</p>
+                  <button class="reply-btn">Reply</button>
+                </div>
+
+                <div class="comment reply">
+                  <div class="comment-header">
+                    <span class="comment-author">Jane Smith</span>
+                    <span class="comment-date">March 16, 2024</span>
+                  </div>
+                  <p class="comment-text">I agree! The tips were very helpful. Looking forward to more content.</p>
+                  <button class="reply-btn">Reply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <address>
+          Contact me:
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </address>
+        <div class="social-links">
+          <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">Pinterest</a>
+          <a href="#" target="_blank">TikTok</a>
+          <a href="#" target="_blank">YouTube</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const body = document.body;
+
+      hamburger.addEventListener("click", () => {
+        const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", !isExpanded);
+        navLinks.classList.toggle("active");
+        body.classList.toggle("menu-open");
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          hamburger.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("active");
+          body.classList.remove("menu-open");
+        }
+      });
+
+      // Scroll reveal effect
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        for (let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const elementTop = reveals[i].getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      });
+
+      // Form handling
+      document.getElementById('emailForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        alert('Message sent successfully!');
+        this.reset();
+      });
+
+      document.getElementById('commentForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('commentName').value;
+        const comment = document.getElementById('comment').value;
+        const date = new Date().toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
+
+        const commentsList = document.querySelector('.comments-list');
+        const newComment = document.createElement('div');
+        newComment.className = 'comment';
+        newComment.innerHTML = `
+          <div class="comment-header">
+            <span class="comment-author">${name}</span>
+            <span class="comment-date">${date}</span>
+          </div>
+          <p class="comment-text">${comment}</p>
+          <button class="reply-btn">Reply</button>
+        `;
+
+        commentsList.appendChild(newComment);
+        this.reset();
+      });
+
+      // Reply button functionality
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('reply-btn')) {
+          const comment = e.target.closest('.comment');
+          const replyForm = document.createElement('form');
+          replyForm.className = 'reply-form';
+          replyForm.innerHTML = `
+            <div class="form-group">
+              <label for="replyName">Name</label>
+              <input type="text" id="replyName" name="replyName" required>
+            </div>
+            <div class="form-group">
+              <label for="reply">Your Reply</label>
+              <textarea id="reply" name="reply" rows="2" required></textarea>
+            </div>
+            <button type="submit" class="btn">Post Reply</button>
+          `;
+
+          replyForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('replyName').value;
+            const reply = document.getElementById('reply').value;
+            const date = new Date().toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            });
+
+            const newReply = document.createElement('div');
+            newReply.className = 'comment reply';
+            newReply.innerHTML = `
+              <div class="comment-header">
+                <span class="comment-author">${name}</span>
+                <span class="comment-date">${date}</span>
+              </div>
+              <p class="comment-text">${reply}</p>
+              <button class="reply-btn">Reply</button>
+            `;
+
+            comment.parentNode.insertBefore(newReply, comment.nextSibling);
+            replyForm.remove();
+          });
+
+          comment.appendChild(replyForm);
+        }
+      });
+    </script>
+  </body>
+</html>
