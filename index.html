@@ -21,6 +21,17 @@
     section { background: #fff; padding: 30px 20px; margin: 20px 0; border-radius: 8px; }
     section h2 { margin-bottom: 15px; color: #007bff; }
     section p { margin-bottom: 10px; }
+    .toggle { display: none; }
+
+.full-article {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.toggle:checked + label + .full-article {
+  max-height: 500px; /* sau cât text ai */
+}
 
     /* Footer */
     footer { text-align: center; padding: 20px; background: #333; color: #fff; margin-top: 40px; }
@@ -41,10 +52,23 @@
     </header>
 
     <!-- Secțiuni principale -->
-    <section>
-      <h2>Web Development</h2>
-      <p>Explore my latest web development projects and coding adventures.</p>
-    </section>
+<section>
+  <h2>Web Development</h2>
+  <p>Explore my latest web development projects and coding adventures.</p>
+  
+  <!-- Toggle pentru articol complet -->
+  <input type="checkbox" id="webdev-toggle" class="toggle">
+  <label for="webdev-toggle" class="btn">Citește mai mult</label>
+
+  <div class="full-article">
+    <p>
+      Aici este articolul complet despre Web Development. Poți detalia fiecare proiect,
+      limbaj folosit, framework, provocări întâlnite și soluții implementate.
+      Se poate adăuga cât text vrei.
+    </p>
+  </div>
+</section>
+
 
     <section>
       <h2>Design & UI/UX</h2>
@@ -75,6 +99,7 @@
   </div>
 </body>
 </html>
+
 
 
 
