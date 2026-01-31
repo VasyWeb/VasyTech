@@ -1,177 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VasyTech Blog</title>
-  <style>
-    /* Reset și font */
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Electrolize, sans-serif; }
-    body { background: #f5f5f5; color: #333; line-height: 1.6; }
-
-    /* Container general */
-    .container { max-width: 1000px; margin: auto; padding: 20px; }
-
-    /* Header */
-    header { background: #007bff; color: #fff; padding: 20px; text-align: center; }
-    header h1 { font-size: 2rem; margin-bottom: 10px; }
-    nav a { color: #fff; text-decoration: none; margin: 0 10px; font-weight: bold; }
-
-    /* Secțiuni */
-    section { background: #fff; padding: 30px 20px; margin: 20px 0; border-radius: 8px; }
-    section h2 { margin-bottom: 15px; color: #007bff; }
-    section p { margin-bottom: 10px; }
-    .toggle { display: none; }
-
-.full-article {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-.toggle:checked + label + .full-article {
-  max-height: 500px; /* sau cât text ai */
-}
-
-    /* Footer */
-    footer { text-align: center; padding: 20px; background: #333; color: #fff; margin-top: 40px; }
-    .social a { color: #fff; text-decoration: none; margin: 0 5px; }
-  </style>
+  <title>VasyTech</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
+
+<header>
   <div class="container">
-    <!-- Header -->
-    <header>
-      <h1>VasyTech Blog</h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-
-    <!-- Secțiuni principale -->
-<section>
-  <h2>Web Development</h2>
-  <p>Explore my latest web development projects and coding adventures.</p>
-  
-  <!-- Toggle pentru articol complet -->
-  <input type="checkbox" id="webdev-toggle" class="toggle">
-  <label for="webdev-toggle" class="btn">Citește mai mult</label>
-
-  <div class="full-article">    
-      <h3>  **Articol: Best Practice in JavaScript - Cum să scrii codul optimizat**</h3>
-      <p>În această postare vom discuta despre best practice în JavaScript, unul dintre principalele limbaje de programare folosite în dezvoltarea web. Aceste reguli vor ajuta să scriem codul optimizat, mai ușor de întreținut și mai scump.</p>
-      <h3>**1. Folosește un editor de cod adecvat**</h3>
-      <p>Un editor de cod adecvat poate ajuta să scriem codul mai rapid și mai eficient. Unele dintre cele mai bune editori de cod pentru JavaScript sunt:
-</p>          
-    <p>* Visual Studio Code</p>
-    <p>* Sublime Text</p>
-    <p>* Atom</p>
-    <h3>**2. Organizează codul în fișiere separate**</h3>
-    <p>Folosește fișiere separate pentru a împărți codul în diferite module. Acest lucru va ajuta să mențiiintegritatea codului și să îl faci mai ușor de întreținut.
-</p>
-    <h3>**3. Utilizează un framework sau bibliotecă**</h3>
-    <h3>Framework-urile și bibliotecile sunt dezvoltate pentru a ajuta cu anumite sarcini, cum ar fi:</h3>
-    <p>* React pentru a crea interfețe de utilizator</p>
-    <p>* Angular pentru a crea aplicații complexe</p>
-    <p>* jQuery pentru a simplifica interacțiunile cu DOM-ul</p>
-    <h3>**4. Scrie codul în funcție de principiul SOLID**</h3>
-    <p>Principiul SOLID este o serie de reguli pentru a scrie codul mai obiectiv și mai ușor de întreținut:</p>
-    <p>* S (Single Responsibility Principle): o clasă sau funcție trebuie să îndeplinească o singură responsabilitate</p>
-    <p>* O (Open-Closed Principle): o clasă sau funcție trebuie să fie deschisă pentru extindere, dar închisă pentru modificare</p>
-    <p>* L (Liskov Substitution Principle): o clasă sau funcție trebuie să fie substituibilă cu o altă clasă sau funcție</p>
-    <p>* I (Interface Segregation Principle): o interfață trebuie să fie împărțită în mai multe interfețe mai mici</p>
-    <p>* D (Dependency Inversion Principle): o clasă sau funcție trebuie să depindă de o interfață, nu de o implementare concretă</p>
-    <h3>**5. Utilizează sintaxa ES6**</h3>
-    <p>Sintaxa ES6 (ECMAScript 6) este o versiune nouă a limbajului JavaScript care oferă mai multe funcții utile, cum ar fi:</p>
-    <p>* Constantele</p>
-    <p>* Template literals</p>
-    <p>* Funcții de ordinul superior</p>
-    <p>* Clasele</p>
-    <h3>**6. Utilizează console.log pentru a debbuga codul**</h3>
-    <p>console.log este o funcție utilă pentru a debbuga codul. Poate fi folosită pentru a printa valori în consola browserului.</p>
-    <h3>**7. Utilizează așteptarea Promise**</h3>
-    <p>Așteptarea Promise este o modalitate de a gestiona comenzile asincrone. Poate fi folosită pentru a aștepta rezultatele unei cereri către un server.
-</p>
-    <h3>**8. Utilizează caching pentru a îmbunătăți performanța**</h3>
-    <p>Caching-ul este o modalitate de a stoca datele în memoria cache a browserului. Poate fi folosită pentru a îmbunătăți performanța și a reduce numărul de cereri către server.
-</p>
-    <h3>**9. Utilizează o arhitectură modulară**</h3>
-    <p>Arhitectura modulară este o modalitate de a împărți codul în module mai mici și mai ușor de întreținut. Poate fi folosită pentru a îmbunătăți performanța și a reduce numărul de dependențe.</p>
-    <h3>**10. Întreține codul și respectă standardele de cod**</h3>
-    <p>Întreținerea codului este un proces important pentru a păstra integritatea și calitatea codului. Respectarea standardelor de cod este crucială pentru a asigura că codul este ușor de întreținut și mai bun.
-</p>
-    <p>Sper că aceste best practice în JavaScript vă vor ajuta să scrieți codul optimizat și mai ușor de întreținut.</p>  
+    <h1>VasyTech</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </div>
-</section>
+</header>
 
-<section>
-  <h2>Web Development</h2>
-  <p>Explore my latest web development projects and coding adventures.</p>
-  
-  <!-- Toggle pentru articol complet -->
-  <input type="checkbox" id="webdev-toggle" class="toggle">
-  <label for="webdev-toggle" class="btn">Citește mai mult</label>
+<main class="container">
+  <!-- AICI conținutul paginii -->
+</main>
 
-  <div class="full-article">
-    <p>
-      Aici este articolul complet despre Web Development. Poți detalia fiecare proiect,
-      limbaj folosit, framework, provocări întâlnite și soluții implementate.
-      Se poate adăuga cât text vrei.
-    </p>
+<footer>
+  <div class="container">
+    © 2026 VasyTech
   </div>
-</section>
-   <section>
-  <h2>Web Development</h2>
-  <p>Explore my latest web development projects and coding adventures.</p>
-  
-  <!-- Toggle pentru articol complet -->
-  <input type="checkbox" id="webdev-toggle" class="toggle">
-  <label for="webdev-toggle" class="btn">Citește mai mult</label>
+</footer>
 
-  <div class="full-article">
-    <p>
-      Aici este articolul complet despre Web Development. Poți detalia fiecare proiect,
-      limbaj folosit, framework, provocări întâlnite și soluții implementate.
-      Se poate adăuga cât text vrei.
-    </p>
-  </div>
-</section>
-
-   <section>
-  <h2>Web Development</h2>
-  <p>Explore my latest web development projects and coding adventures.</p>
-  
-  <!-- Toggle pentru articol complet -->
-  <input type="checkbox" id="webdev-toggle" class="toggle">
-  <label for="webdev-toggle" class="btn">Citește mai mult</label>
-
-  <div class="full-article">
-    <p>
-      Aici este articolul complet despre Web Development. Poți detalia fiecare proiect,
-      limbaj folosit, framework, provocări întâlnite și soluții implementate.
-      Se poate adăuga cât text vrei.
-    </p>
-  </div>
-</section>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 VasyTech Blog. All rights reserved.</p>
-      <div class="social">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Pinterest</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
-      </div>
-    </footer>
-  </div>
 </body>
 </html>
-
 
 
 
