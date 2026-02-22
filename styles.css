@@ -44,7 +44,7 @@ header {
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   letter-spacing: 1px;
   color: var(--accent);
   text-decoration: none;
