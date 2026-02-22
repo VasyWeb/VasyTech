@@ -27,7 +27,7 @@ body {
 .container {
   width: min(1000px, 90%);
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 1.5rem 0;
 }
 
 /* Navigation */
